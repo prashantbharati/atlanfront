@@ -14,19 +14,37 @@ export default function BasicTable({ data1 }) {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontWeight: "bold", fontSize: "25px" }}>
-              Full Name
+              City_Id
             </TableCell>
             <TableCell
               align="right"
               style={{ fontWeight: "bold", fontSize: "25px" }}
             >
-              Username
+              Name
             </TableCell>
             <TableCell
               align="right"
               style={{ fontWeight: "bold", fontSize: "25px" }}
             >
-              Email&nbsp;(g)
+              Latitude
+            </TableCell>
+            <TableCell
+              align="right"
+              style={{ fontWeight: "bold", fontSize: "25px" }}
+            >
+              Longitude
+            </TableCell>
+            <TableCell
+              align="right"
+              style={{ fontWeight: "bold", fontSize: "25px" }}
+            >
+              Rain
+            </TableCell>
+            <TableCell
+              align="right"
+              style={{ fontWeight: "bold", fontSize: "25px" }}
+            >
+              Days
             </TableCell>
           </TableRow>
         </TableHead>
@@ -34,10 +52,13 @@ export default function BasicTable({ data1 }) {
           {data1.map((row) => (
             <TableRow>
               <TableCell component="th" scope="row">
-                {row.fullname}
+                {row.ID}
               </TableCell>
-              <TableCell align="right">{row.username}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
+              <TableCell align="right">{row.Name}</TableCell>
+              <TableCell align="right">{row.geometry[0]}</TableCell>
+              <TableCell align="right">{row.geometry[1]}</TableCell>
+              <TableCell align="right">{row.rain}</TableCell>
+              <TableCell align="right">{row.days}</TableCell>
             </TableRow>
           ))}
         </TableBody>
