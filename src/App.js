@@ -13,14 +13,15 @@ import {
 } from "@material-ui/core";
 import "./index.css";
 const App = () => {
-  const [fd, setfd] = useState(false);
   const [cs, setcs] = useState(0);
 
   const onfinish = (e) => {
-    setfd(true);
+    modal.style.display = "flex";
 
     console.log(cs);
   };
+
+  var modal = document.getElementById("myModal");
 
   return (
     <>
@@ -80,7 +81,7 @@ const App = () => {
 
       <div
         style={{
-          display: fd === true ? "flex" : "none",
+          display: "none",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
@@ -91,9 +92,17 @@ const App = () => {
 
           zIndex: "1",
         }}
+        id="myModal"
       >
         <div style={{ width: "30%" }}>
-          <Form fd={fd} setfd={setfd} cs={cs} />
+          {
+            (window.onclick = function (event) {
+              if (event.target === modal) {
+                modal.style.display = "none";
+              }
+            })
+          }
+          <Form modal={modal} cs={cs} />
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import useStyles from "./styles";
 import Query from "../query";
 
-const Form = ({ fd, setfd, cs }) => {
+const Form = ({ modal, cs }) => {
   console.log(cs, "form");
   const [postData, setPostData] = useState({
     table: "",
@@ -36,20 +36,54 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
       " ORDER BY " +
       data.orderby;
 
-    console.log(query, "lol");
+    console.log(query);
+  };
+
+  const insert = (data) => {
+    console.log("insertquery");
+    const query =
+      "INSERT INTO " +
+      data.table +
+      "(" +
+      data.columns +
+      ") VALUES (" +
+      data.values +
+      " )";
+    console.log(query);
+  };
+
+  const update = (data) => {
+    console.log("updatequery");
+
+    var query =
+      "UPDATE " +
+      data.table +
+      " SET " +
+      data.columns +
+      " TO " +
+      data.values +
+      " WHERE " +
+      data.where;
+
+    console.log(query);
   };
 
   useEffect(() => {});
 
   const clear = () => {
-    setfd(false);
     setPostData({ table: "", columns: "", where: "", values: "", orderby: "" });
+  };
+
+  const close = () => {
+    modal.style.display = "none";
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     cs === 1 && select(postData);
+    cs === 2 && insert(postData);
+    cs === 3 && update(postData);
 
     console.log("handlesubmit");
     console.log(postData);
@@ -160,7 +194,7 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
           variant="contained"
           backgroundColor="#53BF9D"
           size="small"
-          onClick={clear}
+          onClick={close}
           fullWidth
         >
           Close
