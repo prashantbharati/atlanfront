@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 import useStyles from "./styles";
+import Query from "../query";
 
 const Form = ({ fd, setfd, cs }) => {
   console.log(cs, "form");
@@ -15,6 +16,29 @@ const Form = ({ fd, setfd, cs }) => {
 
   const classes = useStyles();
 
+  const select = (data) => {
+    /*
+        {table: 'Table1', columns: 'Rain', where: Array(2), values: '', orderby: 'Name'}
+columns: "Rain"
+orderby: "Name"
+table: "Table1"
+values: ""
+where: (2) ["name='Mussorie'", "name='Shimla'"]
+    */
+    console.log("selectquery");
+    const query =
+      "SELECT " +
+      data.columns +
+      " FROM " +
+      data.table +
+      " WHERE " +
+      data.where +
+      " ORDER BY " +
+      data.orderby;
+
+    console.log(query, "lol");
+  };
+
   useEffect(() => {});
 
   const clear = () => {
@@ -24,7 +48,10 @@ const Form = ({ fd, setfd, cs }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    clear();
+
+    cs === 1 && select(postData);
+
+    console.log("handlesubmit");
     console.log(postData);
   };
 
@@ -60,7 +87,7 @@ const Form = ({ fd, setfd, cs }) => {
           <TextField
             name="columns"
             variant="outlined"
-            label="Columns"
+            label="Columns (coma seperated) (* for all)"
             fullWidth
             value={postData.columns}
             onChange={(e) =>
@@ -73,7 +100,7 @@ const Form = ({ fd, setfd, cs }) => {
           <TextField
             name="where"
             variant="outlined"
-            label="Where (coma seperated)"
+            label="Where"
             fullWidth
             value={postData.where}
             onChange={(e) =>
