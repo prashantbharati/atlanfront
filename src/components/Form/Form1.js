@@ -23,7 +23,7 @@ const Form = ({ currentId, setCurrentId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(e);
+    console.log(postData);
   };
 
   return (
@@ -37,6 +37,8 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? "Editing" : "Creating"} a Memory{" "}
         </Typography>
+
+        <Typography></Typography>
 
         <TextField
           name="title"
