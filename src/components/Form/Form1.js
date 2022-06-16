@@ -3,7 +3,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 import useStyles from "./styles";
 
-const Form = ({ currentId, setCurrentId }) => {
+const Form = ({ fd, setfd }) => {
   const [postData, setPostData] = useState({
     title: "",
     message: "",
@@ -16,7 +16,7 @@ const Form = ({ currentId, setCurrentId }) => {
   useEffect(() => {});
 
   const clear = () => {
-    setCurrentId(0);
+    setfd(false);
     setPostData({ title: "", message: "", tags: "", selectedFile: "" });
   };
 
@@ -34,9 +34,7 @@ const Form = ({ currentId, setCurrentId }) => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">
-          {currentId ? "Editing" : "Creating"} a Memory{" "}
-        </Typography>
+        <Typography variant="h6">Creating</Typography>
 
         <Typography></Typography>
 
