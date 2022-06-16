@@ -34,7 +34,8 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
       " WHERE " +
       data.where +
       " ORDER BY " +
-      data.orderby;
+      data.orderby +
+      ";";
 
     console.log(query);
   };
@@ -48,7 +49,7 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
       data.columns +
       ") VALUES (" +
       data.values +
-      " )";
+      " );";
     console.log(query);
   };
 
@@ -63,8 +64,14 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
       " TO " +
       data.values +
       " WHERE " +
-      data.where;
+      data.where +
+      ";";
 
+    console.log(query);
+  };
+
+  const deleteq = (data) => {
+    const query = "DELETE FROM " + data.table + " WHERE " + data.where + ";";
     console.log(query);
   };
 
@@ -84,6 +91,7 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
     cs === 1 && select(postData);
     cs === 2 && insert(postData);
     cs === 3 && update(postData);
+    cs === 4 && deleteq(postData);
 
     console.log("handlesubmit");
     console.log(postData);
