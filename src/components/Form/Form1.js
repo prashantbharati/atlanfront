@@ -3,12 +3,14 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 import useStyles from "./styles";
 
-const Form = ({ fd, setfd }) => {
+const Form = ({ fd, setfd, cs }) => {
+  console.log(cs, "form");
   const [postData, setPostData] = useState({
-    title: "",
-    message: "",
-    tags: "",
-    selectedFile: "",
+    table: "",
+    columns: "",
+    where: "",
+    values: "",
+    orderby: "",
   });
 
   const classes = useStyles();
@@ -17,12 +19,12 @@ const Form = ({ fd, setfd }) => {
 
   const clear = () => {
     setfd(false);
-    setPostData({ title: "", message: "", tags: "", selectedFile: "" });
+    setPostData({ table: "", columns: "", where: "", values: "", orderby: "" });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    clear();
     console.log(postData);
   };
 
@@ -34,38 +36,77 @@ const Form = ({ fd, setfd }) => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating</Typography>
+        <Typography variant="h6">
+          {cs === 1
+            ? "Select"
+            : cs === 2
+            ? "Insert"
+            : cs === 3
+            ? "Update"
+            : "Delete"}
+          {" Your Query"}
+        </Typography>
 
-        <Typography></Typography>
+        <TextField
+          name="table"
+          variant="outlined"
+          label="Table"
+          fullWidth
+          value={postData.table}
+          onChange={(e) => setPostData({ ...postData, table: e.target.value })}
+        />
 
-        <TextField
-          name="title"
-          variant="outlined"
-          label="Title"
-          fullWidth
-          value={postData.title}
-          onChange={(e) => setPostData({ ...postData, title: e.target.value })}
-        />
-        <TextField
-          name="message"
-          variant="outlined"
-          label="Message"
-          fullWidth
-          value={postData.message}
-          onChange={(e) =>
-            setPostData({ ...postData, message: e.target.value })
-          }
-        />
-        <TextField
-          name="tags"
-          variant="outlined"
-          label="Tags (coma seperated)"
-          fullWidth
-          value={postData.tags}
-          onChange={(e) =>
-            setPostData({ ...postData, tags: e.target.value.split(",") })
-          }
-        />
+        {cs !== 4 && (
+          <TextField
+            name="columns"
+            variant="outlined"
+            label="Columns"
+            fullWidth
+            value={postData.columns}
+            onChange={(e) =>
+              setPostData({ ...postData, columns: e.target.value })
+            }
+          />
+        )}
+
+        {cs !== 2 && (
+          <TextField
+            name="where"
+            variant="outlined"
+            label="Where (coma seperated)"
+            fullWidth
+            value={postData.where}
+            onChange={(e) =>
+              setPostData({ ...postData, where: e.target.value.split(",") })
+            }
+          />
+        )}
+
+        {cs !== 1 && cs !== 4 && (
+          <TextField
+            name="values"
+            variant="outlined"
+            label="Values (coma seperated)"
+            fullWidth
+            value={postData.values}
+            onChange={(e) =>
+              setPostData({ ...postData, values: e.target.value.split(",") })
+            }
+          />
+        )}
+
+        {cs === 1 && (
+          <TextField
+            name="orderby"
+            variant="outlined"
+            label="Order By"
+            fullWidth
+            value={postData.orderby}
+            onChange={(e) =>
+              setPostData({ ...postData, orderby: e.target.value })
+            }
+          />
+        )}
 
         <Button
           className={classes.buttonSubmit}
@@ -78,6 +119,7 @@ const Form = ({ fd, setfd }) => {
           Submit
         </Button>
         <Button
+          className={classes.buttonSubmit}
           variant="contained"
           color="secondary"
           size="small"
@@ -85,6 +127,16 @@ const Form = ({ fd, setfd }) => {
           fullWidth
         >
           Clear
+        </Button>
+        <Button
+          className={classes.buttonSubmit}
+          variant="contained"
+          backgroundColor="#53BF9D"
+          size="small"
+          onClick={clear}
+          fullWidth
+        >
+          Close
         </Button>
       </form>
     </Paper>

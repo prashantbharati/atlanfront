@@ -14,9 +14,12 @@ import {
 import "./index.css";
 const App = () => {
   const [fd, setfd] = useState(false);
+  const [cs, setcs] = useState(0);
 
-  const onfinish = () => {
+  const onfinish = (e) => {
     setfd(true);
+
+    console.log(cs);
   };
 
   return (
@@ -25,22 +28,51 @@ const App = () => {
 
       <Grid container>
         <Grid item sm={3}>
-          <Button variant="contained" color="primary" onClick={onfinish}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={async () => {
+              await setcs(1);
+              console.log(cs);
+              onfinish();
+            }}
+          >
             Select
           </Button>
         </Grid>
         <Grid item sm={3}>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setcs(2);
+              onfinish();
+            }}
+          >
             Insert
           </Button>
         </Grid>
         <Grid item sm={3}>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setcs(3);
+              onfinish();
+            }}
+          >
             Update
           </Button>
         </Grid>
         <Grid item sm={3}>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setcs(4);
+              onfinish();
+            }}
+          >
             Delete
           </Button>
         </Grid>
@@ -56,14 +88,12 @@ const App = () => {
           width: "100%",
           position: "fixed",
           backgroundColor: "rgba(0,0,0,0.4)",
-          // overflow: "auto",
-          /* Fallback color */
 
           zIndex: "1",
         }}
       >
-        <div style={{ width: "50%" }}>
-          <Form fd={fd} setfd={setfd} />
+        <div style={{ width: "30%" }}>
+          <Form fd={fd} setfd={setfd} cs={cs} />
         </div>
       </div>
 
