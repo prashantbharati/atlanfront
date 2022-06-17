@@ -3,7 +3,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 import useStyles from "./styles";
 
-const Form = ({ modal, cs }) => {
+const Form = ({ cv, setcv, cs }) => {
   console.log(cs, "form");
   const [postData, setPostData] = useState({
     table: "",
@@ -73,7 +73,7 @@ const Form = ({ modal, cs }) => {
   };
 
   const close = () => {
-    modal.style.display = "none";
+    setcv(0);
   };
 
   const handleSubmit = async (e) => {

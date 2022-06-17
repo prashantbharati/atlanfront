@@ -6,97 +6,92 @@ import { Grid, Button } from "@material-ui/core";
 import "./index.css";
 const App = () => {
   const [cs, setcs] = useState(0);
+  const [cv, setcv] = useState(0);
 
-  var modal = document.getElementById("myModal");
   const onfinish = (e) => {
-    console.log(modal.style, "style");
-    modal.style.display = "flex";
-
+    setcv(1);
     console.log(cs, "here");
   };
 
   return (
     <>
       {/*first enter input field */}
-
-      <Grid container>
-        <Grid item sm={3}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={async () => {
-              await setcs(1);
-              console.log(cs);
-              onfinish();
-            }}
-          >
-            Select
-          </Button>
+      <div style={{ padding: "5px" }}>
+        <Grid container>
+          <Grid item sm={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={async () => {
+                await setcs(1);
+                console.log(cs);
+                onfinish();
+              }}
+            >
+              Select
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                setcs(2);
+                onfinish();
+              }}
+            >
+              Insert
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                setcs(3);
+                onfinish();
+              }}
+            >
+              Update
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                setcs(4);
+                onfinish();
+              }}
+            >
+              Delete
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item sm={3}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setcs(2);
-              onfinish();
-            }}
-          >
-            Insert
-          </Button>
-        </Grid>
-        <Grid item sm={3}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setcs(3);
-              onfinish();
-            }}
-          >
-            Update
-          </Button>
-        </Grid>
-        <Grid item sm={3}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setcs(4);
-              onfinish();
-            }}
-          >
-            Delete
-          </Button>
-        </Grid>
-      </Grid>
+      </div>
 
       <div
         style={{
-          display: "none",
-          flexDirection: "column",
+          display: "flex",
+          width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
-          width: "100%",
-          position: "fixed",
-          backgroundColor: "rgba(0,0,0,0.4)",
-
-          zIndex: "1",
+          zIndex: "1000",
         }}
-        id="myModal"
       >
-        <div style={{ width: "30%" }}>
-          {
-            (window.onclick = function (event) {
-              if (event.target === modal) {
-                modal.style.display = "none";
-              }
-            })
-          }
-          <Form modal={modal} cs={cs} />
+        <div
+          style={{
+            height: "0",
+            width: "30%",
+            zIndex: "1000",
+
+            display: cv === 1 ? "flex" : "none",
+          }}
+        >
+          <Form cv={cv} setcv={setcv} cs={cs} />
         </div>
       </div>
+      <hr style={{ border: "1px solid black" }} />
     </>
   );
 };
