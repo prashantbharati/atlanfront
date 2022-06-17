@@ -78,7 +78,18 @@ function App() {
               }
             />
           ) : (
-            <Analatics elevation={6} transactions={cities} />
+            <Analatics
+              elevation={6}
+              transactions={
+                ts === 1
+                  ? cities
+                  : ts === 2
+                  ? cities2
+                  : ts === 3
+                  ? cities3
+                  : city4
+              }
+            />
           )}
         </div>
       )}
