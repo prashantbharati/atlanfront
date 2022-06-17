@@ -7,24 +7,32 @@ function Analatics(cities) {
 
   return (
     <>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          setfield(1);
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          padding: "50px",
         }}
       >
-        Rain
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          setfield(2);
-        }}
-      >
-        Days
-      </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            setfield(1);
+          }}
+        >
+          Rain
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            setfield(2);
+          }}
+        >
+          Days
+        </Button>
+      </div>
 
       {field !== 0 && <BarChart1 cities={cities} field={field} />}
     </>

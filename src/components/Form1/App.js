@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Form from "./Form1";
 
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Typography } from "@material-ui/core";
 import "./index.css";
 const App = () => {
   const [cs, setcs] = useState(0);
@@ -18,6 +18,12 @@ const App = () => {
       {/*first enter input field */}
       <div style={{ padding: "5px" }}>
         <Grid container>
+          <Grid item sm={4}>
+            <Typography variant="h5" className="typography">
+              Create Your Query :-
+            </Typography>
+          </Grid>
+
           <Grid item sm={2}>
             <Button
               variant="contained"

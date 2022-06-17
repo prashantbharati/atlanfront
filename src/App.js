@@ -31,6 +31,7 @@ function App() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            margin: "10px",
           }}
         >
           <div className="view-switch mx-5">
@@ -52,7 +53,15 @@ function App() {
         </div>
       </div>
       {ts !== 0 && (
-        <div style={{ height: "70vh", overflow: "scroll" }}>
+        <div
+          style={{
+            height: "70vh",
+            overflow: "scroll",
+            margin: "10px",
+            elevation: "10",
+            border: "5px solid black",
+          }}
+        >
           {viewType === "table" ? (
             <BasicTable
               elevation={6}
