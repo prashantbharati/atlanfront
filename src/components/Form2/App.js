@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Form from "./Form1";
-
 import {
   Container,
   Grow,
@@ -11,16 +9,15 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import "./index.css";
+import Form2 from "./Form2.js";
 const App = () => {
   const [cs, setcs] = useState(0);
 
-  var modal = document.getElementById("myModal");
+  var modal = document.getElementById("myModal1");
   const onfinish = (e) => {
-    console.log(modal.style, "style");
     modal.style.display = "flex";
 
-    console.log(cs, "here");
+    console.log(cs, "hereFROM2");
   };
 
   return (
@@ -28,7 +25,7 @@ const App = () => {
       {/*first enter input field */}
 
       <Grid container>
-        <Grid item sm={3}>
+        <Grid item sm={2}>
           <Button
             variant="contained"
             color="primary"
@@ -38,10 +35,10 @@ const App = () => {
               onfinish();
             }}
           >
-            Select
+            AVG
           </Button>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item sm={2}>
           <Button
             variant="contained"
             color="primary"
@@ -50,10 +47,10 @@ const App = () => {
               onfinish();
             }}
           >
-            Insert
+            COUNT
           </Button>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item sm={2}>
           <Button
             variant="contained"
             color="primary"
@@ -62,10 +59,10 @@ const App = () => {
               onfinish();
             }}
           >
-            Update
+            MAX
           </Button>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item sm={2}>
           <Button
             variant="contained"
             color="primary"
@@ -74,7 +71,19 @@ const App = () => {
               onfinish();
             }}
           >
-            Delete
+            MIN
+          </Button>
+        </Grid>
+        <Grid item sm={2}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setcs(5);
+              onfinish();
+            }}
+          >
+            SUM
           </Button>
         </Grid>
       </Grid>
@@ -92,7 +101,7 @@ const App = () => {
 
           zIndex: "1",
         }}
-        id="myModal"
+        id="myModal1"
       >
         <div style={{ width: "30%" }}>
           {
@@ -102,7 +111,7 @@ const App = () => {
               }
             })
           }
-          <Form modal={modal} cs={cs} />
+          <Form2 modal={modal} cs={cs} />
         </div>
       </div>
     </>

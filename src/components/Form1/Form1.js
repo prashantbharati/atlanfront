@@ -94,6 +94,8 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
     cs === 4 && deleteq(postData);
 
     console.log("handlesubmit");
+    clear();
+    close();
     console.log(postData);
   };
 
@@ -146,7 +148,7 @@ where: (2) ["name='Mussorie'", "name='Shimla'"]
             fullWidth
             value={postData.where}
             onChange={(e) =>
-              setPostData({ ...postData, where: e.target.value.split(",") })
+              setPostData({ ...postData, where: e.target.value })
             }
           />
         )}
