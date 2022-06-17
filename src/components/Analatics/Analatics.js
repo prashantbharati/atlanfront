@@ -1,12 +1,16 @@
 import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 import BarChart1 from "./Barchart";
-
-function Analatics(cities) {
+import { UnorderedListOutlined, AreaChartOutlined } from "@ant-design/icons";
+function Analatics({ viewType, setViewType }, cities) {
   const [field, setfield] = useState(0);
 
   return (
     <>
+      <div className="view-switch mx-5">
+        <UnorderedListOutlined onClick={() => setViewType("table")} size={30} />
+        <AreaChartOutlined onClick={() => setViewType("analytics")} size={30} />
+      </div>
       <Button
         variant="contained"
         color="primary"
