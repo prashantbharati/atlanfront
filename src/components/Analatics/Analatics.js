@@ -1,14 +1,9 @@
-import { Button, Input, TextField } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 import BarChart1 from "./Barchart";
 
 function Analatics(cities) {
   const [field, setfield] = useState(0);
-  const [data, setdata] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <>

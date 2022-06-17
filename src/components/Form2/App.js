@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 
-import {
-  Container,
-  Grow,
-  Grid,
-  Paper,
-  AppBar,
-  TextField,
-  Button,
-} from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import Form2 from "./Form2.js";
 const App = () => {
   const [cs, setcs] = useState(0);
 
-  var modal = document.getElementById("myModal1");
+  var modal1 = document.getElementById("myModal11");
   const onfinish = (e) => {
-    modal.style.display = "flex";
+    modal1.style.display = "flex";
 
     console.log(cs, "hereFROM2");
   };
@@ -101,17 +93,17 @@ const App = () => {
 
           zIndex: "1",
         }}
-        id="myModal1"
+        id="myModal11"
       >
         <div style={{ width: "30%" }}>
           {
             (window.onclick = function (event) {
-              if (event.target === modal) {
-                modal.style.display = "none";
+              if (event.target === modal1) {
+                modal1.style.display = "none";
               }
             })
           }
-          <Form2 modal={modal} cs={cs} />
+          <Form2 modal1={modal1} cs={cs} />
         </div>
       </div>
     </>
