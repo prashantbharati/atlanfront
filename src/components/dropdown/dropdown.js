@@ -4,18 +4,20 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Button, Typography } from "@material-ui/core";
+import { Button, TextField, Typography } from "@material-ui/core";
 
 export default function BasicSelect({ ts, setts }) {
   const [query, setquery] = React.useState(0);
 
   const handleChange = (event) => {
     setquery(event.target.value);
+
     console.log(query);
   };
 
-  const handleClick = (e) => {
-    setquery(e.target.value);
+  const handleChange1 = (event) => {
+    setquery(11);
+
     console.log(query);
   };
 
@@ -29,9 +31,13 @@ export default function BasicSelect({ ts, setts }) {
         alignItems: "center",
       }}
     >
-      <Typography style={{ fontFamily: "Montserrat" }} variant="h4">
-        Enter Your Query
-      </Typography>
+      <TextField
+        name="table"
+        variant="outlined"
+        onMouseLeave={handleChange1}
+        label="Table"
+        fullWidth
+      />
 
       <Box style={{ width: "50%" }}>
         <FormControl fullWidth>
@@ -41,9 +47,9 @@ export default function BasicSelect({ ts, setts }) {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
+            onChange={handleChange}
             value={query}
             label="query"
-            onChange={handleChange}
           >
             <MenuItem value={1}>SELECT * FROM TABLE_1</MenuItem>
             <MenuItem value={2}>SELECT * FROM TABLE_2</MenuItem>
@@ -51,7 +57,15 @@ export default function BasicSelect({ ts, setts }) {
           </Select>
         </FormControl>
       </Box>
-      <Button variant="contained" color="primary" onClick={setts(query)}>
+
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          setts(query === 11 ? 1 : query);
+          console.log(ts);
+        }}
+      >
         Run Query
       </Button>
     </div>
