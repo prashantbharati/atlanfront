@@ -1,7 +1,7 @@
 import React from "react";
 import App1 from "./components/Form1/App";
 import App2 from "./components/Form2/App";
-import cities from "./citydetails";
+import cities from "./details/citydetails";
 import BasicTable from "./Table";
 function App() {
   return (
