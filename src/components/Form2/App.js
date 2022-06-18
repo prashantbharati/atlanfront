@@ -91,10 +91,26 @@ const App = () => {
             width: "100%",
             justifyContent: "center",
             alignItems: "center",
+            // position: "relative",
           }}
         >
-          <div style={{ width: "30%", display: cv === 1 ? "flex" : "none" }}>
-            <Form2 cv={cv} setcv={setcv} cs={cs} />
+          <div
+            style={{
+              height: "0",
+              width: "30%",
+              zIndex: "1000",
+              display: cv === 1 ? "flex" : "none",
+              background: "white",
+            }}
+          >
+            <div>
+              <Form2
+                style={{ background: "white", position: "absolute" }}
+                cv={cv}
+                setcv={setcv}
+                cs={cs}
+              />
+            </div>
           </div>
         </div>
       </div>

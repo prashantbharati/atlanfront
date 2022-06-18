@@ -30,7 +30,7 @@ const BarChart1 = ({ cities, field }) => {
           labels: data,
           datasets: [
             {
-              label: "RainFall (in mm)",
+              label: field === 1 ? "RainFall (in mm)" : "Days",
               data: values,
               backgroundColor: [
                 "rgba(172,196,255, 1)",

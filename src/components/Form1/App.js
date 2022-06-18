@@ -82,7 +82,6 @@ const App = () => {
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          zIndex: "1000",
         }}
       >
         <div
@@ -92,9 +91,12 @@ const App = () => {
             zIndex: "1000",
 
             display: cv === 1 ? "flex" : "none",
+            position: "relative",
           }}
         >
-          <Form cv={cv} setcv={setcv} cs={cs} />
+          <div>
+            <Form cv={cv} setcv={setcv} cs={cs} />
+          </div>
         </div>
       </div>
       <hr style={{ border: "1px solid black" }} />
