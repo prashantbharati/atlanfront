@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   lists: {
     border: "1px solid black",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     margin: "10px",
   },

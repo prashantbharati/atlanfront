@@ -8,6 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+
 export default function App() {
   const [query, setQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
@@ -36,8 +37,12 @@ export default function App() {
 
   return (
     <>
-      <input type="text" value={query} onChange={handleSearch}></input>
-
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ padding: "10px" }}
+      >
+        <input type="text" value={query} onChange={handleSearch}></input>
+      </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

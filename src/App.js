@@ -4,13 +4,18 @@ import cities from "./details/citydetails";
 import cities2 from "./details/citydetails2";
 import cities3 from "./details/citydetails3";
 
-import { UnorderedListOutlined, AreaChartOutlined } from "@ant-design/icons";
+import {
+  UnorderedListOutlined,
+  AreaChartOutlined,
+  AlignLeftOutlined,
+} from "@ant-design/icons";
 
 import "./index.css";
 import useStyles from "./styles";
-
+import App3 from "./components/infinitescroll/App.js";
 const App1 = lazy(() => import("./components/Form1/App"));
 const App2 = lazy(() => import("./components/Form2/App"));
+// const App3 = lazy(() => import("./components/infinitescroll/App"));
 const Dropdown = lazy(() => import("./components/dropdown/dropdown"));
 const BasicTable = lazy(() => import("./components/Table/Table"));
 const Analatics = lazy(() => import("./components/Analatics/Analatics"));
@@ -59,6 +64,10 @@ function App() {
               onClick={() => setViewType("analytics")}
               size={30}
             />
+            <AlignLeftOutlined
+              className="mx-3"
+              onClick={() => setViewType("BookList")}
+            />
           </div>
         </div>
       </div>
@@ -81,6 +90,8 @@ function App() {
                 }
               />
             </Suspense>
+          ) : viewType === "BookList" ? (
+            <App3 />
           ) : (
             <Suspense fallback={<div>Loading.....</div>}>
               <Analatics
@@ -99,6 +110,7 @@ function App() {
           )}
         </div>
       )}
+      {ts === 0 && viewType === "BookList" ? <App3 /> : ""}
     </>
   );
 }
