@@ -1,8 +1,35 @@
-# Getting Started with Create React App
+# SQL TRACKER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Following are the major highlights of the application
+1. A Textarea For an user to enter its query, when an user enter his query into the text area and clicks on run query 
+a (tablular view/analatical view) screen is generated underneath, showcasing the result of the query
+![image](https://user-images.githubusercontent.com/73072690/174439784-61e47293-9748-442f-b01a-70c5cab486e9.png)
+![image](https://user-images.githubusercontent.com/73072690/174439816-f6d078d5-cb00-41a1-98bc-ed54d171fe28.png)
 
-## Available Scripts
+
+2. Under the Textarea there's a dropdown section where an user can toggle between some already stored query, 
+Three different tables have been used in the running of these queries,containing the rainfall data of three different 
+countries namely INDIA,USA,Germany
+3. Just above the section where the output screen is generated there is a box containing three different icons, the icons are 
+responsible for toggling among the
+Tabular view, analatical view of the ran query, and 
+4. The third icon is responsible for the printing of a books table on the basis of the query the user enters in the input field which is fetching data from an 
+external openbooks api and printing it in a tabluar fashion till the point an user scrolls
+so that an user can get all the required recommendation it needs
+
+5.The analatical view for each query is a comparison among all the attributes for all the rows, so there are buttons showcasing the attributes which can be chosen to print whatever the data the user needs
+so that a verified conclusion for each query can be generated
+
+6. The create query section is builtin for the non coder users that. For each type of query there's a button present, which on 
+being clicked would produce an input form
+which will ask for the required fields to genetate a query (different fields for each query) and would print the query itself in the console, 
+which can later on be connected to a backend and can be sent to a database for its use
+
+7. The get results section is responsible for providing the user with all the arithmetic data it requires, the 
+functionality is similar as above, all the required fields are asked for by a form 
+and the usable query is generated in the console
+
+## Overview
 
 In the project directory, you can run:
 
