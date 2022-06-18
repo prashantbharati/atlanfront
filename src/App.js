@@ -12,7 +12,7 @@ import useStyles from "./styles";
 const App1 = lazy(() => import("./components/Form1/App"));
 const App2 = lazy(() => import("./components/Form2/App"));
 const Dropdown = lazy(() => import("./components/dropdown/dropdown"));
-const BasicTable = lazy(() => import("./Table"));
+const BasicTable = lazy(() => import("./components/Table/Table"));
 const Analatics = lazy(() => import("./components/Analatics/Analatics"));
 
 function App() {
