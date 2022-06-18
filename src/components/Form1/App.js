@@ -18,60 +18,59 @@ const App = () => {
       {/*first enter input field */}
       <div className="topdiv">
         <Grid container>
-          <Grid item sm={4}>
+          <Grid item sm={3}>
             <Typography variant="h5" className="typography">
               Create Your Query :-
             </Typography>
           </Grid>
 
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={async () => {
-                await setcs(1);
-                console.log(cs);
-                onfinish();
-              }}
-            >
-              Select
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(2);
-                onfinish();
-              }}
-            >
-              Insert
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(3);
-                onfinish();
-              }}
-            >
-              Update
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(4);
-                onfinish();
-              }}
-            >
-              Delete
-            </Button>
+          <Grid item sm={8}>
+            <div className="buttons">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={async () => {
+                  await setcs(1);
+                  console.log(cs);
+                  onfinish();
+                }}
+              >
+                Select
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(2);
+                  onfinish();
+                }}
+              >
+                Insert
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(3);
+                  onfinish();
+                }}
+              >
+                Update
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(4);
+                  onfinish();
+                }}
+              >
+                Delete
+              </Button>
+            </div>
           </Grid>
         </Grid>
       </div>

@@ -28,13 +28,17 @@ export default function BasicSelect({ ts, setts }) {
           Enter Your Query
         </Typography>
 
-        <div style={{ width: "60%" }}>
+        <div style={{ width: "80%" }}>
           <TextField
             name="table"
             fullWidth
-            variant="standard"
+            variant="filled"
             onMouseLeave={handleChange1}
-            label="Table"
+            className={classes.textField}
+            label="Enter Your Query"
+            InputProps={{
+              className: classes.input,
+            }}
           />
         </div>
 

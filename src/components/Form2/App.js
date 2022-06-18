@@ -16,71 +16,70 @@ const App = () => {
       {/*first enter input field */}
       <div className="topdiv">
         <Grid container>
-          <Grid item sm={2}>
+          <Grid item sm={3}>
             <Typography variant="h5" className="typography">
               Get Results :-
             </Typography>
           </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={async () => {
-                await setcs(1);
-                console.log(cs);
-                onfinish();
-              }}
-            >
-              AVG
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(2);
-                onfinish();
-              }}
-            >
-              COUNT
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(3);
-                onfinish();
-              }}
-            >
-              MAX
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(4);
-                onfinish();
-              }}
-            >
-              MIN
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                setcs(5);
-                onfinish();
-              }}
-            >
-              SUM
-            </Button>
+
+          <Grid item sm={8}>
+            <div className="buttons">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={async () => {
+                  await setcs(1);
+                  console.log(cs);
+                  onfinish();
+                }}
+              >
+                AVG
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(2);
+                  onfinish();
+                }}
+              >
+                COUNT
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(3);
+                  onfinish();
+                }}
+              >
+                MAX
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(4);
+                  onfinish();
+                }}
+              >
+                MIN
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  setcs(5);
+                  onfinish();
+                }}
+              >
+                SUM
+              </Button>
+            </div>
           </Grid>
         </Grid>
 

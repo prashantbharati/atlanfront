@@ -41,7 +41,12 @@ export default function App() {
         className="d-flex justify-content-center align-items-center"
         style={{ padding: "10px" }}
       >
-        <input type="text" value={query} onChange={handleSearch}></input>
+        <input
+          type="text"
+          lable="Enter your need"
+          value={query}
+          onChange={handleSearch}
+        ></input>
       </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">

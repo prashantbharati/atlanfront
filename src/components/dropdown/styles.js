@@ -9,4 +9,17 @@ export default makeStyles((theme) => ({
     justifyContent: "space-evenly",
     alignItems: "center",
   },
+  textField: {
+    width: "90%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    paddingBottom: 0,
+    marginTop: 0,
+    fontWeight: 500,
+    backgroundColor: "#51557E",
+  },
+  input: {
+    color: "white",
+  },
+  label: { color: "white" },
 }));
