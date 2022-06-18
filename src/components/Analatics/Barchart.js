@@ -16,7 +16,6 @@ const BarChart1 = ({ cities, field }) => {
           return city.days;
         });
 
-  console.log(data, "adta");
   return (
     <div
       style={{

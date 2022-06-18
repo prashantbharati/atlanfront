@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Form from "./Form1";
 
 import { Grid, Button, Typography } from "@material-ui/core";
-import "./index.css";
+import "../index.css";
 const App = () => {
   const [cs, setcs] = useState(0);
   const [cv, setcv] = useState(0);
@@ -16,14 +16,10 @@ const App = () => {
   return (
     <>
       {/*first enter input field */}
-      <div style={{ padding: "5px", margin: "10px" }}>
+      <div className="topdiv">
         <Grid container>
           <Grid item sm={4}>
-            <Typography
-              variant="h5"
-              style={{ fontWeight: "700", fontFamily: "Montserrat" }}
-              className="typography"
-            >
+            <Typography variant="h5" className="typography">
               Create Your Query :-
             </Typography>
           </Grid>
@@ -81,11 +77,9 @@ const App = () => {
       </div>
 
       <div
+        className="d-flex justify-content-center align-items-center"
         style={{
-          display: "flex",
           width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <div
