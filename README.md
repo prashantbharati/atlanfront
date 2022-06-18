@@ -1,5 +1,7 @@
 # SQL TRACKER
 
+## [Video Demo Link](https://drive.google.com/file/d/10FK7MfvZVrEt6kLhOWAxb2RU0AwCcBbc/view?usp=sharing)
+
 ## Overview
 
 Following are the major highlights of the application
