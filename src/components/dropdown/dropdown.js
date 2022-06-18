@@ -5,10 +5,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button, TextField, Typography } from "@material-ui/core";
-
+import useStyles from "./styles";
 export default function BasicSelect({ ts, setts }) {
   const [query, setquery] = React.useState(0);
-
+  const classes = useStyles();
   const handleChange = (event) => {
     setquery(event.target.value);
 
@@ -23,16 +23,7 @@ export default function BasicSelect({ ts, setts }) {
 
   return (
     <>
-      <div
-        style={{
-          height: "60vh",
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-        }}
-      >
+      <div className={classes.query}>
         <Typography style={{ fontFamily: "Montserrat" }} variant="h4">
           Enter Your Query
         </Typography>

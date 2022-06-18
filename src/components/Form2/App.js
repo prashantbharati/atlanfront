@@ -5,20 +5,22 @@ import Form2 from "./Form2.js";
 const App = () => {
   const [cs, setcs] = useState(0);
   const [cv, setcv] = useState(0);
-  var modal1 = document.getElementById("myModal11");
+
   const onfinish = (e) => {
     setcv(1);
-
-    console.log(cs, "hereFROM2");
   };
 
   return (
     <>
       {/*first enter input field */}
-      <div style={{ padding: "5px" }}>
+      <div style={{ padding: "5px", margin: "10px" }}>
         <Grid container>
           <Grid item sm={2}>
-            <Typography variant="h5" className="typography">
+            <Typography
+              variant="h5"
+              className="typography"
+              style={{ fontWeight: "700", fontFamily: "Montserrat" }}
+            >
               Get Results :-
             </Typography>
           </Grid>

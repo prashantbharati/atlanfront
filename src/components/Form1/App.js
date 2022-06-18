@@ -16,10 +16,14 @@ const App = () => {
   return (
     <>
       {/*first enter input field */}
-      <div style={{ padding: "5px" }}>
+      <div style={{ padding: "5px", margin: "10px" }}>
         <Grid container>
           <Grid item sm={4}>
-            <Typography variant="h5" className="typography">
+            <Typography
+              variant="h5"
+              style={{ fontWeight: "700", fontFamily: "Montserrat" }}
+              className="typography"
+            >
               Create Your Query :-
             </Typography>
           </Grid>
